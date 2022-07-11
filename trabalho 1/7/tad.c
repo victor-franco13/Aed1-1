@@ -1,15 +1,10 @@
 /*
---Justificativa do aluno sobre a escolha do TAD--
-    Para o problema de Josephus, como se trata de uma roda com remoções de pessoas
-através de sorteios, utilizei uma lista encadeada(devido a quantidade grande quantidade
-de remoções ao decorrer do programa), com o comportamento circular(para que a ideia de roda
-ocorra com maior facilidade, e seja possível percorrer a lista na forma de um círculo, já que
-é necessário passar do fim para o início da lista várias vezes). Cogitei em usar a técnica de nó cabeçalho
-para o problema, mas conclui que não seria necessário, já que ia tornar a implementação mais difícil
-pelo fato de ser circular, e também, percorrer a lista uma vez para saber seu tamanho já é
-suficiente para descartar o uso do nó cabeçalho para esse problema.
+    De inicio planejava utilizar lista linear por pensar em um batalhao limitdo no entanto cheguei a conclusao que uma lista circular
+    por ser mais facil percorrer com o pensamento de ser envolta da fogueira e pq ela atende um dos requisitos que é ir do inicio ao fim.
 */
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "tad.h"
 struct no
 {

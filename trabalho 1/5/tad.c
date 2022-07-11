@@ -99,7 +99,7 @@ int tamanho(Lista *lst)
 
 int insere_pos(Lista *lst, int index, int elem)
 {
-    if (index < 0 || lista_vazia(lst) || index >= lista_tam(lst))
+    if (index < 0 || lista_vazia(lst) || index >= tamanho(lst))
         return 0;
     // Daqui pra frente existe a posição da lista que deseja-se colocar
     Lista N = (Lista)malloc(sizeof(struct no));

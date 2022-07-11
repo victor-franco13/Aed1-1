@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
 #include "tad.h"
 
 void sorteia_inicio(Lista *lst)

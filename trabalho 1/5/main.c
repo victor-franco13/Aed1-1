@@ -2,10 +2,11 @@
 #include <stdlib.h>
 #include <conio.h>
 #include "tad.h"
+#include <Windows.h>
 
 int main()
 {
-    int op, elem, pos;
+    int op, elem, pos, *pt;
     Lista lst;
     do
     {
@@ -14,26 +15,23 @@ int main()
         {
             printf(" --- LISTAS ESTATICAS SEQUENCIAIS --- \n\n");
             printf(" Escolha uma opcao\n");
-            printf(" 1. Inserir na lista\n");
-            printf(" 2. Menor elemento da lista\n");
-            printf(" 3. Tamanho da lista\n");
-            printf(" 4. Excluir elemento da lista\n");
-            printf(" 5. Excluir elementos impares\n");
-            printf(" 6. Concatena lista\n");
-            printf(" 7. inveter lista\n");
-            printf(" 8. imprimir lista\n");
-            printf(" 9. Sair\n");
+            printf(" 1. Inserir na lista final\n");
+            printf(" 2. Inserir na lista inicio\n");
+            printf(" 3. Remove final\n");
+            printf(" 4. Insere posicao\n");
+            printf(" 5. Remove posicao\n");
+            printf(" 6. Sair\n");
 
             printf(" Opcao: ");
             scanf("%d", &op);
-            if ((op < 1) || (op > 9))
+            if ((op < 1) || (op > 6))
             {
 
                 printf("\n\n Opcao Invalida! Tente novamente...");
                 getch();
                 system("CLS || clear");
             }
-        } while ((op < 1) || (op > 12));
+        } while ((op < 1) || (op > 6));
 
         switch (op)
         {
@@ -52,7 +50,8 @@ int main()
         case 3:
             printf("Digite o valor a ser removido: ");
             scanf("%d", &elem);
-            remove_inicio(&lst, elem);
+            pt = elem;
+            remove_inicio(&lst, pt);
             break;
         case 4:
             printf("Digite o valor a ser inserido e a posicao: ");
@@ -64,22 +63,14 @@ int main()
             printf("Digite o valor a ser inserido e a posicao: ");
             scanf("%d", &elem);
             scanf("%d", &pos);
-            remove_pos(&lst, pos, elem);
-        case 6:
-            printf("e igual? %d", elem);
-            break;
-        case 7:
-            imprime(lst);
-            break;
-        case 8:
-            break;
-        case 9:
-            break;
+            pt = elem;
+            remove_pos(&lst, pos, pt);
         default:
             printf("Opcao invalida!\n");
             break;
         }
-    } while (op != 9);
+        system("PAUSE");
+    } while (op != 6);
 
     return 0;
 }

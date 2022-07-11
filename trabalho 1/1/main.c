@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include "tad.h"
+#include <Windows.h>
 
 int main()
 {
@@ -98,6 +99,7 @@ int main()
             printf("Opcao invalida!\n");
             break;
         }
+        system("PAUSE");
     } while (op != 9);
 
     return 0;
