@@ -1,0 +1,11 @@
+typedef struct no *Lista;
+Lista cria_lista();
+int lista_vazia(Lista lst);
+int insere_ord(Lista *lst, int elem);
+int remove_ord(Lista *lst, int elem);
+int tamanho(Lista *lst);
+float media(Lista *lst);
+int comparar(Lista lista1, Lista lista2);
+Lista inversao(Lista lst);
+Lista impar(Lista lst);
+int escolhe_lst(void);

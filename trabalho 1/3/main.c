@@ -6,6 +6,7 @@
 int main()
 {
     int op, elem, es;
+    float felem;
     Lista lst[3];
     lst[0] = cria_lista();
     lst[1] = cria_lista();
@@ -24,7 +25,8 @@ int main()
             printf(" 4. Excluir elemento da lista\n");
             printf(" 5. Excluir elementos impares\n");
             printf(" 6. Concatena lista\n");
-            printf(" 7. Imprimir lista\n");
+            printf(" 7. inveter lista\n");
+            printf(" 8. imprimir lista\n");
             printf(" 9. Sair\n");
 
             printf(" Opcao: ");
@@ -44,7 +46,7 @@ int main()
             es = escolhe_lst();
             printf("Digite o valor a ser inserido: ");
             scanf("%d", &elem);
-            insere_elem(lst[es], elem);
+            insere_elem(&lst[es], elem);
 
             break;
         case 2:
@@ -62,7 +64,7 @@ int main()
             break;
         case 3:
             es = escolhe_lst();
-            elem = tamanho(lst[es]);
+            elem = tamanho(&lst[es]);
 
             printf("Tamanho da lista: %d\n", elem);
 
@@ -71,28 +73,28 @@ int main()
             es = escolhe_lst();
             printf("Digite o valor a ser removido: ");
             scanf("%d", &elem);
-            remove_elem(lst[es], elem);
+            remove_elem(&lst[es], elem);
             break;
         case 5:
             es = escolhe_lst();
-            remove_impar(lst[es]);
-            imprime(lst[es]);
+            felem = media(&lst[es]);
+            printf("media da lista: %f\n", felem);
             break;
         case 6:
-            printf("Escolha qual lista sera a base\n");
-            es = escolhe_lst();
-            lst[2] = concatena(lst[es], lst[!es]);
-            printf("Resultado:\n");
-            imprime(lst[2]);
-            lst[2] = NULL;
-
+            elem = comparar(lst[1], lst[2]);
+            printf("e igual? %d", elem);
             break;
         case 7:
             es = escolhe_lst();
-
+            lst[3] = inversao(lst[es]);
             imprime(lst[es]);
             break;
         case 8:
+            es = escolhe_lst();
+
+            imprime(lst[es]);
+            break;
+        case 9:
             break;
         default:
             printf("Opcao invalida!\n");
