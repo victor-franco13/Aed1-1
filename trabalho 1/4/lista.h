@@ -1,0 +1,12 @@
+typedef struct lista *Lista;
+Lista cria_lista();
+int lista_vazia(Lista *);
+int remove_ord(Lista *, char);
+int obtem_valor_elem(Lista *, int, char *);
+int obtem_tamanho(Lista *);
+int insere_ord(Lista *, char);
+int listas_iguais(Lista *, Lista *);
+int maior_elem(Lista *, char *);
+int esvazia_lista(Lista *);
+int intercalar(Lista *, Lista *, Lista *);
+int remove_pos(Lista *, int, char *);
